@@ -1,0 +1,93 @@
+/* Full-screen container */
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay for contrast */
+.home-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.6); /* #121212 with opacity */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Content aligned to left 50% */
+.home-content {
+  width: 50%;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+/* Heading style */
+.home-heading {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+/* Description text */
+.home-description {
+  font-size: 22px;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+/* Button */
+.find-jobs-button {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.find-jobs-button:hover {
+  background-color: #4f46e5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+  }
+
+  .home-overlay {
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .home-content {
+    width: 100%;
+  }
+
+  .home-heading {
+    font-size: 32px;
+  }
+
+  .home-description {
+    font-size: 18px;
+  }
+
+  .find-jobs-button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="jobs-container">
+  <h2 class="jobs-heading">Available Jobs</h2>
+
+  <!-- Add Job Button -->
+  <div class="add-job-button-container">
+    <button class="add-job-button">Add New Job</button>
+  </div>
+
+  <!-- Job Cards -->
+  <div class="jobs-list">
+    <div *ngFor="let job of jobs" class="job-card">
+      <img [src]="job.company_logo_url" alt="Company Logo" class="company-logo" />
+      <div class="job-details">
+        <h3 class="job-title">{{ job.title }}</h3>
+        <p class="job-info"><strong>Type:</strong> {{ job.employment_type }}</p>
+        <p class="job-info"><strong>Location:</strong> {{ job.location }}</p>
+        <p class="job-info"><strong>Package:</strong> {{ job.package_per_annum }}</p>
+        <p class="job-info"><strong>Rating:</strong> {{ job.rating }} ★</p>
+        <p class="job-description"><strong>Description:</strong> {{ job.job_description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

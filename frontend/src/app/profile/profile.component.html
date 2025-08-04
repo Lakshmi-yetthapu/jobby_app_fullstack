@@ -1,0 +1,101 @@
+<div class="profile-container">
+  <h2 class="profile-heading">User Profile</h2>
+
+  <form (ngSubmit)="updateProfile()" #profileForm="ngForm" class="profile-form">
+    <!-- Profile Image Upload -->
+    <div class="profile-image-section">
+      <img
+        *ngIf="profileImageUrl"
+        [src]="profileImageUrl"
+        alt="Profile"
+        class="profile-image"
+      />
+      <input
+        type="file"
+        (change)="onImageSelected($event)"
+        [disabled]="!isEditMode"
+      />
+    </div>
+
+    <input
+      class="form-input"
+      type="text"
+      name="username"
+      [(ngModel)]="user.username"
+      placeholder="Username"
+      [readonly]="!isEditMode"
+      required
+    />
+
+    <input
+      class="form-input"
+      type="password"
+      name="password"
+      [(ngModel)]="user.password"
+      placeholder="Password"
+      [readonly]="!isEditMode"
+      required
+    />
+
+    <div class="form-group">
+      <label class="form-label">Graduation Status:</label>
+      <label>
+        <input
+          type="radio"
+          name="graduationStatus"
+          value="Pursuing"
+          [(ngModel)]="user.graduationStatus"
+          [disabled]="!isEditMode"
+        />
+        Pursuing
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="graduationStatus"
+          value="Completed"
+          [(ngModel)]="user.graduationStatus"
+          [disabled]="!isEditMode"
+        />
+        Completed
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Work Status:</label>
+      <select
+        name="workStatus"
+        class="form-input"
+        [(ngModel)]="user.workStatus"
+        [disabled]="!isEditMode"
+      >
+        <option value="Student">Student</option>
+        <option value="Employee">Employee</option>
+      </select>
+    </div>
+
+    <input
+      class="form-input"
+      type="text"
+      name="designation"
+      [(ngModel)]="user.designation"
+      placeholder="Designation"
+      [readonly]="!isEditMode"
+    />
+
+    <textarea
+      class="form-input"
+      name="bio"
+      [(ngModel)]="user.bio"
+      rows="4"
+      placeholder="Short Bio"
+      [readonly]="!isEditMode"
+    ></textarea>
+
+    <div class="button-group">
+      <button *ngIf="!isEditMode" class="form-button edit-btn" type="button" (click)="toggleEditMode()">Edit</button>
+      <button *ngIf="isEditMode" class="form-button save-btn" type="submit">Save</button>
+      <button *ngIf="isEditMode" class="form-button cancel-btn" type="button" (click)="toggleEditMode()">Cancel</button>
+    </div>
+  </form>
+</div>

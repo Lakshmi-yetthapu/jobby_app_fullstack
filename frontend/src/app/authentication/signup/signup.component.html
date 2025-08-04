@@ -1,0 +1,88 @@
+<div class="signup-container">
+  <h2 class="signup-heading">Sign Up</h2>
+  <form (ngSubmit)="onSignup()" #signupForm="ngForm" class="signup-form">
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Username"
+      name="username"
+      [(ngModel)]="username"
+      required
+    />
+    
+    <input
+      class="form-input"
+      type="password"
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="password"
+      required
+    />
+
+    <!-- Graduation Status -->
+    <div class="form-group">
+      <label class="form-label">Graduation Status:</label>
+      <label>
+        <input
+          type="radio"
+          name="graduationStatus"
+          value="Pursuing"
+          [(ngModel)]="graduationStatus"
+          required
+        />
+        Pursuing
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="graduationStatus"
+          value="Completed"
+          [(ngModel)]="graduationStatus"
+        />
+        Completed
+      </label>
+    </div>
+
+    <!-- Current Work Status -->
+    <div class="form-group">
+      <label class="form-label">Current Work Status:</label>
+      <select
+        class="form-input"
+        name="workStatus"
+        [(ngModel)]="workStatus"
+        required
+      >
+        <option value="" disabled selected>Select status</option>
+        <option value="Student">Student</option>
+        <option value="Employee">Employee</option>
+      </select>
+    </div>
+
+    <!-- Designation -->
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Designation"
+      name="designation"
+      [(ngModel)]="designation"
+      required
+    />
+
+    <!-- Short Bio -->
+    <textarea
+      class="form-input"
+      rows="4"
+      placeholder="Short Bio"
+      name="bio"
+      [(ngModel)]="bio"
+      required
+    ></textarea>
+
+    <button class="form-button" type="submit" [disabled]="!signupForm.form.valid">Sign Up</button>
+  </form>
+
+  <p class="switch-link">
+    Already have an account?
+    <a class="link-text" routerLink="/login">Login here</a>
+  </p>
+</div>

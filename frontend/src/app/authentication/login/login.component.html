@@ -1,0 +1,34 @@
+<div class="login-wrapper">
+  <div class="form-container">
+    <h2 class="form-title">Login</h2>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Usename"
+        name="username"
+        [(ngModel)]="username"
+        required
+      />
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
+      <button
+        type="submit"
+        class="form-button"
+        [disabled]="!loginForm.form.valid"
+      >
+        Login
+      </button>
+    </form>
+    <p class="form-footer">
+      Don't have an account?
+      <a routerLink="/signup" class="form-link">Sign up here</a>
+    </p>
+  </div>
+</div>

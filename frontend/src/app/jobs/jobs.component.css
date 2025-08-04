@@ -1,0 +1,100 @@
+/* Main container */
+.jobs-container {
+  width: 100vw;
+  min-height: calc(100vh - 64px); /* assuming navbar height = 64px */
+  padding: 24px;
+  background-color: #2c364c;
+  color: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.jobs-heading {
+  text-align: center;
+  font-size: 32px;
+  color: #f8fafc;
+  margin-bottom: 32px;
+}
+
+/* Add Job Button Container */
+.add-job-button-container {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+/* Add Job Button */
+.add-job-button {
+  padding: 10px 20px;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-job-button:hover {
+  background-color: #4f46e5;
+}
+
+/* Job Cards List */
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Job Card */
+.job-card {
+  background-color: #202020;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  border-color: #6366f1;
+}
+
+/* Company Logo */
+.company-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Job Details */
+.job-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.job-title {
+  font-size: 20px;
+  color: #b6c5ff;
+  margin-bottom: 8px;
+}
+
+.job-details p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.job-details p strong {
+  color: #fbbf24;
+}
