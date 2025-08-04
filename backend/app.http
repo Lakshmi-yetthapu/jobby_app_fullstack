@@ -1,0 +1,24 @@
+### Signup - create a new user
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "username": "lakshmi",
+  "password": "Lakshmi@9676"
+}
+
+###
+
+### Login - get JWT token
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "lakshmi",
+  "password": "Lakshmi@9676"
+}
+
+###
+
+### Ping test (optional, if you add /ping route)
+GET http://localhost:3000/ping
